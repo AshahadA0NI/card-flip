@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <style>
+      .preserve-3d {
+        transform-style: preserve-3d;
+      }
+
+      .backface-hidden {
+        backface-visibility: hidden;
+      }
+
+      .card:hover .content {
+        transform: rotateY(180deg);
+        transition-duration: 0.5s;
+      }
+    </style>
+  </head>
+  <body class="flex justify-center items-center min-h-screen bg-gradient-to-br from-[#1f0036] to-[#0ef6e4]">
+    <div class="card relative w-[300px] h-[300px]" style="perspective: 1000px">
+      <div class="content absolute inset-0 transition-transform duration-1000 preserve-3d">
+        <div class="front absolute w-full h-full bg-white text-[#03446A] text-[60px] flex items-center justify-center rounded-md backface-hidden cursor-pointer">
+          <img src="/assets/reactjs.png" class="w-full h-full cursor-pointer" />
+        </div>
+
+        <div
+          class="back absolute w-full h-full bg-[#03446A] text-white text-[60px] flex items-center justify-center rounded-md backface-hidden cursor-pointer"
+          style="transform: rotateY(180deg)"
+        >
+          <img src="/assets/nextjs.webp" class="w-full h-full cursor-pointer" />
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
